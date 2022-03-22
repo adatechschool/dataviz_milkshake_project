@@ -1,7 +1,7 @@
 const apiDataPokemon = {
     url: 'https://pokeapi.co/api/v2/', //url API
     type: 'pokemon',
-    id: '33',
+    id: Math.floor(Math.random()*151)+1,
 }
 
 const {url, type, id} = apiDataPokemon
@@ -22,7 +22,7 @@ const generateHtml = (data) => {
     console.log(data)
     const html = `
         <div class="name">${data.name}</div>
-        <img src=${data.sprites.front_default}>
+        <img src=../pkmn_sprites/${id}.svg>
     `
     const pokemonDiv = document.querySelector('.pokemon')
     pokemonDiv.innerHTML = html
