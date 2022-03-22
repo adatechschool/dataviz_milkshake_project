@@ -1,0 +1,7 @@
+body { text-align:center;}
+img { width:200px;
+}
+
+.pokemon, .meteo {display:inline-block;
+                  text-align:center;
+                  margin-top:200px;}
