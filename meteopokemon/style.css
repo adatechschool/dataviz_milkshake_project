@@ -1,7 +1,31 @@
+h2 {font-family: 'amatic_scregular';
+    margin-top:120px;
+    font-size:50px;
+}
 body { text-align:center;}
-img { width:200px;
+img { width:150px;
 }
 
-.pokemon, .meteo {display:inline-block;
+.pokemon, .meteo, .button {display:inline-block;
                   text-align:center;
-                  margin-top:200px;}
+                font-family: Arial, Helvetica, sans-serif
+}
+.button {
+   }
+
+.pokemon {
+    margin-right:20px;
+}
+
+
+@font-face {
+    font-family: 'amatic_scregular';
+    src: url('amaticsc-regular-webfont.woff2') format('woff2'),
+    url('amaticsc-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.name, .temperature {
+    margin-top: 20px;
+}

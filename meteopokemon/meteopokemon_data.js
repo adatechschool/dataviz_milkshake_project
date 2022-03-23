@@ -1,3 +1,5 @@
+
+function Animate(){
 const apiDataPokemon = {
     url: 'https://pokeapi.co/api/v2/', //url API
     type: 'pokemon',
@@ -8,7 +10,8 @@ const {url, type, id} = apiDataPokemon
 
 const apiUrlPokemon = `${url}${type}/${id}`
 
-fetch(apiUrlPokemon) // fetch pour récupérer la date de l'API pokeapi
+
+    fetch(apiUrlPokemon) // fetch pour récupérer la date de l'API pokeapi
     .then( (data) => {
         if(data.ok){
             return data.json()
@@ -21,12 +24,16 @@ fetch(apiUrlPokemon) // fetch pour récupérer la date de l'API pokeapi
 const generateHtml = (data) => {
     console.log(data)
     const html = `
-        <div class="name">${data.name}</div>
         <img src=../pkmn_sprites/${id}.svg>
+        <br>
+        <div class="name">${data.name}</div>
     `
     const pokemonDiv = document.querySelector('.pokemon')
     pokemonDiv.innerHTML = html
 }
+}
+Animate();
+setInterval(Animate,2000);
 
 fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric')
 .then( (dataMeteo) => {
@@ -40,20 +47,24 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&appid=c21a75b6
 
 const generateHtmlMeteo = (dataMeteo) => {
 console.log(dataMeteo)
-const html = `
-    <div class="weatherdescription">Paris: ${dataMeteo.weather[0].description}</div>
-`
-const meteoDiv = document.querySelector('.meteo')
-meteoDiv.innerHTML = html
-
 if (dataMeteo.weather[0].description=="clear sky")
 {
 const photoMeteo =
-`<img src="sun2.jpg"></img>
+`<img src="sun2.jpg"></img><br>
 `
-document.querySelector('.meteo').innerHTML += photoMeteo
+document.querySelector('.meteo').innerHTML = photoMeteo
+const html = `
+<div class="temperature">Paris: ${dataMeteo.main.temp}</div>
+<div class="weatherdescription">Paris: ${dataMeteo.weather[0].description}</div>
+`
+const meteoDiv = document.querySelector('.meteo')
+meteoDiv.innerHTML += html
+
 }
 }
+
+
+
 
 
 
