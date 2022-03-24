@@ -1,4 +1,15 @@
-h1 {
-    color: rgb(273, 72, 50);
-    background-color: rgb(248, 217, 209);
+h3 {text-align:center;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2em;
+}
+body {
+    background-color: #59C4BE;
+    color:white;
+}
+
+.flags {width:50px;}
+
+.btn-secondary{
+  background-color:#314D62;
 }
