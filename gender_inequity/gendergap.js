@@ -25,3 +25,10 @@ const generateHtml = (data) => {
 }
 
 
+function countryObservation(d){
+    let z = Object.keys(d.dataSets[0].observations)
+    let defList = []
+    for(let i = 0; i<z.length; i++){
+        defList.push(d.dataSets[0].observations[z[i]][0])}
+    return defList
+}
