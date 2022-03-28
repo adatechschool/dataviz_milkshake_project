@@ -32,3 +32,14 @@ function countryObservation(d){
         defList.push(d.dataSets[0].observations[z[i]][0])}
     return defList
 }
+
+
+function countryYears(a){
+    let y = a.structure.dimensions.observation[1].values
+    let newList = []
+    for (let i = 0; i<y.length; i++){
+        newList.push(y[i].id)}
+    return newList
+}
+
+const pays = ['Australia, Austria, Belgium, Canada, chile, Colombia, Costa Rica, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Israel, Italy, Japan']
