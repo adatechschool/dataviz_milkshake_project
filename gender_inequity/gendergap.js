@@ -54,11 +54,12 @@ function Jesus(obj, number){
         final_list.push(clone)
         document.querySelector('body').appendChild(clone)
     }
+    return final_list
 }
 
 /* ------ BACK ------ */
 
 
 /* ------ FRONT ------ */
-Jesus(bnfem, 50)
-Jesus(bnmal, 50)
+let banknotes_fem = Jesus(bnfem, 50)
+let banknotes_mal = Jesus(bnmal, 50)
