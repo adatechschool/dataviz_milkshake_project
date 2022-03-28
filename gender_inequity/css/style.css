@@ -8,6 +8,21 @@ body {
 }
 .flags {width:50px;}
 
+.bnsvg{
+  position: absolute;
+  width: 3%;
+}
+
+.fem{
+  top: 82%;
+  left: 1237px;
+}
+
+.mal{
+  top: 82%;
+  left: 1047px;
+}
+
 .btn-secondary{
   background-color:#314D62;
 }
