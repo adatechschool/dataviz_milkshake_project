@@ -32,3 +32,4 @@ function countryObservation(d){
         defList.push(d.dataSets[0].observations[z[i]][0])}
     return defList
 }
+

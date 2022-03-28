@@ -13,3 +13,17 @@ body {
 .btn-secondary{
   background-color:#314D62;
 }
+
+.btn-primary {
+  background-color: #314D62 !important;
+  border-color: #314D62 ;
+  outline-color: #5b8cb1 !important
+}
+.btn-primary:hover {
+  background-color: #5b8cb1 !important;
+  border-color: #5b8cb1 ;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow:none;
+}
