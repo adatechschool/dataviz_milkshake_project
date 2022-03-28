@@ -1,14 +1,27 @@
-h3 {text-align:center;
-    color:white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-top: 2em;
-}
+
 body {
     background-color: #59C4BE;
     color:white;
 }
+.illustration { width:110%;
 
+}
 .flags {width:50px;}
+
+.bnsvg{
+  position: absolute;
+  width: 3%;
+}
+
+.fem{
+  top: 82%;
+  left: 1237px;
+}
+
+.mal{
+  top: 82%;
+  left: 1047px;
+}
 
 .btn-secondary{
   background-color:#314D62;
@@ -16,12 +29,12 @@ body {
 
 .btn-primary {
   background-color: #314D62 !important;
-  border-color: #314D62 ;
+  border-color: #314D62 !important;
   outline-color: #5b8cb1 !important
 }
 .btn-primary:hover {
   background-color: #5b8cb1 !important;
-  border-color: #5b8cb1 ;
+  border-color: #5b8cb1 !important ;
 }
 
 .btn-primary.focus, .btn-primary:focus {
