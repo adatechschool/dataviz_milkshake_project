@@ -10,17 +10,17 @@ body {
 .blocvide {width:50px;}
 .bnsvg{
   position: absolute;
-  width: 3%;
+  width: 3.5%;
 }
 
 .fem{
-  top: 82%;
-  left: 1237px;
+  top: 100px;
+  left: 1154px;
 }
 
 .mal{
-  top: 82%;
-  left: 1047px;
+  top: 100px;
+  left: 1462px;
 }
 
 .btn-secondary{
