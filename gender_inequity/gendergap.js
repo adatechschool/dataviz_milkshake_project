@@ -1,31 +1,13 @@
 /* ------ CODE SETUP ------ */
 
+//CALL API
 async function returnAPI(url){
-    const pl = await fetch(url)
-    const data = await pl.json()
+    const pl = await fetch(url);
+    const data = await pl.json();
     return data
 }
 
-// fetch('https://stats.oecd.org/SDMX-JSON/data/DEC_I/AUS+AUT+BEL+CAN+CHL+COL+CRI+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LTU+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+OECD+BGR+HRV+CYP+MLT+ROU.MEN+WOMEN+MW.GWG1+GWG5+GWG9/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions')
-// .then( (data) => {
-//     if(data.ok){
-//         return data.json()
-        
-//     } 
-// })
-// .then( gendergap => generateHtml(gendergap))
-// .catch( error => console.error('Error:', error))
-
-// const generateHtml = (data) => {
-//     console.log(data)
-//     const html = `
-//         <div class="name">${data}</div>
-//     `
-//     const gendergapDiv = document.querySelector('.gendergap')
-//     gendergapDiv.innerHTML = html
-// }
-
-
+// DATA
 function countryObservation(d){
     let z = Object.keys(d.dataSets[0].observations)
     let defList = []
@@ -222,7 +204,6 @@ const pays = [
     }
 ]
 
-
 function countries(b){
    let c = b.structure.dimensions.observation[0].values
    let list = []
@@ -232,12 +213,23 @@ function countries(b){
 return list
 }
 
-//https://stats.oecd.org/SDMX-JSON/data/DEC_I/AUS+AUT+BEL+CAN+CHL+COL+CRI+CZE+DNK+EST+FIN+FRA+DEU+GRC+HUN+ISL+IRL+ISR+ITA+JPN+KOR+LVA+LTU+LUX+MEX+NLD+NZL+NOR+POL+PRT+SVK+SVN+ESP+SWE+CHE+TUR+GBR+USA+OECD+BGR+HRV+CYP+MLT+ROU.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions
+// ANIMATION
+function currentbnY(){
+    return `${bgPic.y+0.9*bgPic.height}px`
+}
 
-const pays = ['Australia, Austria, Belgium, Canada, chile, Colombia, Costa Rica, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Israel, Italy, Japan']
+let bgPic = document.querySelector('#illustration_bg').getBoundingClientRect()
+let bnY = currentbnY()
+const bnfemX = "60%"
+const bnmalX = '76.5%'
 
 const bnfem = document.querySelector(".fem")
 const bnmal = document.querySelector(".mal")
+
+function stickToPicture(obj){
+    bnY = initbnY()
+    obj.style.top = bnY
+}
 
 function Jesus(obj, number){
     final_list = [obj]
@@ -249,13 +241,32 @@ function Jesus(obj, number){
     return final_list
 }
 
+function createExtendedDOMProto(obj){
+    let primer = Object.getPrototypeOf(obj)
+}
+
+function defineTrajectory(obj, targetX, targetY){
+    coor = obj.getBoundingClientRect()
+    moveX = targetX - coor.x
+    moveY = targetY - coor.y
+    return [moveX, moveY]
+}
+
+function moneyRain(list, initialX, initialY){
+
+    for (const item in list){
+
+    } 
+}
+
+let bnfem_list=[]
+let bnmal_list=[]
+let bn_list = bnfem_list.concat(bnmal_list)
+
 /* ------ BACK ------ */
 
-
 /* ------ FRONT ------ */
+window.addEventListener('resize', () => {
+    bn_list.forEach(bn => stickToPicture(bn))
+})
 
-let banknotes_fem = Jesus(bnfem, 50)
-let banknotes_mal = Jesus(bnmal, 50)
-
-Jesus(bnfem, 50)
-Jesus(bnmal, 50)
