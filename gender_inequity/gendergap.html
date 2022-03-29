@@ -20,8 +20,8 @@
         <div class="col-5 text-center">
           <h5 id="textecountry" class="mb-5">En France, les femmes gagnent 11.82 de moins que les hommes</h5>
           <p>
-            <button class="btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              <img id="flagcountry" class="flags d-inline"  src="css/flags/fr.svg">
+            <button id="buttoncountry" class="btn-lg btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+              <img id="flagcountry" class="flags d-inline"  src="css/flags/FRAflag.svg">
               <p class="d-inline ml-2">Choose a country</p>
             </button>
           </p>
@@ -30,14 +30,154 @@
               <div class="container">
                 <div class="row">
                   <div class="col">
-                    <a href="#"><img id="france" class="flags"  src="css/flags/fr.svg"></a>
+                    <a href="#"><img id="FRA" class="flags country" onClick="getCountry(this.id)" src="css/flags/FRAflag.svg"></a>
                   </div>
                   <div class="col">
-                    <a href="#"><img id="allemagne" class="flags"  src="css/flags/allemagneflag.png"></a>
+                    <a href="#"><img id="DEU" class="flags country" onClick="getCountry(this.id)"  src="css/flags/DEUflag.svg"></a>
                   </div>
                   <div class="col">
-                    <a href="#"><img id="canada" class="flags"  src="css/flags/canadaflag.png"></a>
+                    <a href="#"><img id="CAN" class="flags country" onClick="getCountry(this.id)" src="css/flags/CANflag.svg"></a>
                    </div>
+                  <div class="col">
+                    <a href="#"><img id="BGR" class="flags country" onClick="getCountry(this.id)" src="css/flags/BGRflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="ISL" class="flags country" onClick="getCountry(this.id)" src="css/flags/ISLflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="MEX" class="flags country" onClick="getCountry(this.id)" src="css/flags/MEXflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="ITA" class="flags country" onClick="getCountry(this.id)" src="css/flags/ITAflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="FIN" class="flags country" onClick="getCountry(this.id)" src="css/flags/FINflag.svg"></a>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <a href="#"><img id="SWE" class="flags country" onClick="getCountry(this.id)" src="css/flags/SWEflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="SVN" class="flags country" onClick="getCountry(this.id)" src="css/flags/SVNflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="EST" class="flags country" onClick="getCountry(this.id)" src="css/flags/ESTflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="CHL" class="flags country" onClick="getCountry(this.id)" src="css/flags/CHLflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="COL" class="flags country" onClick="getCountry(this.id)" src="css/flags/COLflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="ROU" class="flags country" onClick="getCountry(this.id)" src="css/flags/ROUflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="LTU" class="flags country" onClick="getCountry(this.id)" src="css/flags/LTUflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="ESP" class="flags country" onClick="getCountry(this.id)" src="css/flags/ESPflag.svg"></a>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <a href="#"><img id="LUX" class="flags country" onClick="getCountry(this.id)" src="css/flags/LUXflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="POL" class="flags country" onClick="getCountry(this.id)" src="css/flags/POLflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="JPN" class="flags country" onClick="getCountry(this.id)" src="css/flags/JPNflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="GBR" class="flags country" onClick="getCountry(this.id)" src="css/flags/GBRflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="BEL" class="flags country" onClick="getCountry(this.id)" src="css/flags/BELflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="HUN" class="flags country" onClick="getCountry(this.id)" src="css/flags/HUNflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="NOR" class="flags country" onClick="getCountry(this.id)" src="css/flags/NORflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="MLT" class="flags country" onClick="getCountry(this.id)" src="css/flags/MLTflag.svg"></a>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <a href="#"><img id="HRV" class="flags country" onClick="getCountry(this.id)" src="css/flags/HRVflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="SVK" class="flags country" onClick="getCountry(this.id)" src="css/flags/SVKflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="IRL" class="flags country" onClick="getCountry(this.id)" src="css/flags/IRLflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="LVA" class="flags country" onClick="getCountry(this.id)" src="css/flags/LVAflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="KOR" class="flags country" onClick="getCountry(this.id)" src="css/flags/KORflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="TUR" class="flags country" onClick="getCountry(this.id)" src="css/flags/TURflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="AUT" class="flags country" onClick="getCountry(this.id)" src="css/flags/AUTflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="PRT" class="flags country" onClick="getCountry(this.id)" src="css/flags/PRTflag.svg"></a>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col">
+                    <a href="#"><img id="NZL" class="flags country" onClick="getCountry(this.id)" src="css/flags/NZLflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="GRC" class="flags country" onClick="getCountry(this.id)" src="css/flags/GRCflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="USA" class="flags country" onClick="getCountry(this.id)" src="css/flags/USAflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="CRI" class="flags country" onClick="getCountry(this.id)" src="css/flags/CRIflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="CYP" class="flags country" onClick="getCountry(this.id)" src="css/flags/CYPflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="ISR" class="flags country" onClick="getCountry(this.id)" src="css/flags/ISRflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="NLD" class="flags country" onClick="getCountry(this.id)" src="css/flags/NLDflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="CHE" class="flags country" onClick="getCountry(this.id)" src="css/flags/CHEflag.svg"></a>
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col pr-2">
+                    <a href="#"><img id="CZE" class="flags country" onClick="getCountry(this.id)" src="css/flags/CZEflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="DNK" class="flags country" onClick="getCountry(this.id)" src="css/flags/DNKflag.svg"></a>
+                  </div>
+                  <div class="col">
+                    <a href="#"><img id="AUS" class="flags country" onClick="getCountry(this.id)" src="css/flags/AUSflag.svg"></a>
+                  </div>
+                  <div class="col blocvide">
+                  </div>
+                  <div class="col blocvide">
+                  </div>
+                  <div class="col blocvide">
+                  </div>
+                  <div class="col blocvide">
+                  </div>
+                  <div class="col blocvide">
+                  </div>
                 </div>
               </div>
             </div>
@@ -51,11 +191,9 @@
     </div>
     <object class="bnsvg fem" data="img/banknote-green.svg"></object>
     <object class="bnsvg mal" data="img/banknote-green.svg"></object>
+    <script src="js/script.js"></script>
     <script src="gendergap.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 </html>

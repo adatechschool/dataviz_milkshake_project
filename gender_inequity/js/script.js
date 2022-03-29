@@ -1,3 +1,4 @@
+/*
 document.getElementById("allemagne").onclick = function() {getAllemagne()};
 
 function getAllemagne () {
@@ -18,4 +19,16 @@ document.getElementById("canada").onclick = function() {getCanada()};
 function getCanada () {
     document.getElementById("textecountry").innerHTML =  `<h5>Au Canada, les femmes gagnent 11.82 de moins que les hommes</h5>`;
     document.getElementById("flagcountry").src="css/flags/canadaflag.png";
+}
+*/
+
+
+/*document.getElementsByClassName("country").onclick=function() {
+    const id= this.id;
+    getCountry(id);
+};*/
+
+function getCountry(id) {
+    document.getElementById("textecountry").innerHTML =  `<h5>En ${id}, les femmes gagnent 11.82 de moins que les hommes</h5>`;
+    document.getElementById("flagcountry").src=`css/flags/${id}flag.svg`;
 }

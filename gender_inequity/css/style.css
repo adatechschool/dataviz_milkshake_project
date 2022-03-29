@@ -7,7 +7,7 @@ body {
 
 }
 .flags {width:50px;}
-
+.blocvide {width:50px;}
 .bnsvg{
   position: absolute;
   width: 3%;
@@ -39,4 +39,8 @@ body {
 
 .btn-primary.focus, .btn-primary:focus {
   box-shadow:none;
+}
+
+.card {
+  background-color:rgb(255,255,255,0.3);
 }
