@@ -9,10 +9,9 @@ async function returnAPI(url){
 
 function urlPays(){
     
-    let nowList =[]
+    let nowList = Pays.slice();
     
-    let promesse = Pays.forEach(pays => pays.promesse = returnAPI(`https://stats.oecd.org/SDMX-JSON/data/DEC_I/${pays.id}.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions`))
-    nowList.push(promesse)
+    nowList.forEach(pays => pays.promesse = returnAPI(`https://stats.oecd.org/SDMX-JSON/data/DEC_I/${pays.id}.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions`))
     return(nowList)
 
 
