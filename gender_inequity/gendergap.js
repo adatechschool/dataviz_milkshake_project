@@ -15,22 +15,16 @@ function urlPays(){
     return(nowList)
 
 
-    //let promise = await returnAPI(`https://stats.oecd.org/SDMX-JSON/data/DEC_I/${id}.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions`)
 
 }
 
-function totalInfoPays(){
-
-    let datapays = {
-        //object. assign()
-        //const array = ['foo', 'boo', 'zoo'];
-        //const obj = Object.assign({}, array);
-        //console.log(obj)
-
-
-
-
-    }
+function pays_Objet(){
+    const dList = urlPays()
+    let fObjet = {}
+    dList.forEach(element => {
+        fObjet[element.id] = element
+    });
+    return fObjet    
 }
 
  
