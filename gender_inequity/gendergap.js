@@ -254,10 +254,6 @@ return list
 }
 
 // ANIMATION
-function currentbnY(){
-    return `${bgPic.y+0.9*bgPic.height}px`
-}
-
 let bgPic = document.querySelector('#illustration_bg').getBoundingClientRect()
 let bnY = currentbnY()
 const bnfemX = "60%"
@@ -266,8 +262,20 @@ const bnmalX = '76.5%'
 const bnfem = document.querySelector(".fem")
 const bnmal = document.querySelector(".mal")
 
+function currentbnY(){
+    bgPic = document.querySelector('#illustration_bg').getBoundingClientRect()
+    return `${bgPic.y+0.72*bgPic.height}px`
+}
+
+function init_anime(){
+    bnfem.style.left = bnfemX
+    bnmal.style.left = bnmalX
+    stickToPicture(bnfem)
+    stickToPicture(bnmal)
+}
+
 function stickToPicture(obj){
-    bnY = initbnY()
+    bnY = currentbnY()
     obj.style.top = bnY
 }
 
@@ -292,13 +300,6 @@ function defineTrajectory(obj, targetX, targetY){
     return [moveX, moveY]
 }
 
-function moneyRain(list, initialX, initialY){
-
-    for (const item in list){
-
-    } 
-}
-
 let bnfem_list=[]
 let bnmal_list=[]
 let bn_list = bnfem_list.concat(bnmal_list)
@@ -306,7 +307,10 @@ let bn_list = bnfem_list.concat(bnmal_list)
 /* ------ BACK ------ */
 
 /* ------ FRONT ------ */
+init_anime()
+
 window.addEventListener('resize', () => {
+    stickToPicture(bnfem); stickToPicture(bnmal);
     bn_list.forEach(bn => stickToPicture(bn))
 })
 
