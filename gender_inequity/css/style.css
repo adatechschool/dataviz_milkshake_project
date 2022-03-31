@@ -1,4 +1,3 @@
-
 body {
     background-color: #59C4BE;
     color:white;
@@ -7,13 +6,14 @@ body {
 
 }
 .flags {width:50px;}
+
 .blocvide {width:50px;}
+
 .bnsvg{
   position: absolute;
   top: 98%;
   width: 3.5%;  
 }
-
 .fem{
   left: 60%;
 }
@@ -43,3 +43,19 @@ body {
 .card {
   background-color:rgb(255,255,255,0.3);
 }
+
+@keyframes rectFade{
+  from {
+    width: 1%;
+    }
+    to {
+    width:5%;
+    opacity: 1;
+    }
+  }
+
+  .fem, .mal {
+    opacity: 0;
+    animation: rectFade 1s cubic-bezier(0.645, 
+    0.045, 0.355, 1) forwards;
+    }
