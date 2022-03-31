@@ -254,6 +254,10 @@ const bnmalX = '76.5%'
 
 const bnfem = document.querySelector(".fem")
 const bnmal = document.querySelector(".mal")
+let bnfem_list
+let rev_bnfem_list
+let bnmal_list
+let rev_bnmal_list
 
 function currentbnY(){
     bgPic = document.querySelector('#illustration_bg').getBoundingClientRect()
@@ -261,15 +265,18 @@ function currentbnY(){
 }
 
 function init_anime(){
-    bnfem.style.left = bnfemX
-    bnmal.style.left = bnmalX
-    stickToPicture(bnfem)
-    stickToPicture(bnmal)
+    bnfem.style.top = currentbnY()
+    bnmal.style.top = currentbnY()
+    bnfem_list=Jesus(bnfem,33)
+    bnmal_list=Jesus(bnmal,33)
+    rev_bnfem_list=bnfem_list.slice().reverse()
+    rev_bnmal_list=bnmal_list.slice().reverse()
+    bnSetPosition(rev_bnfem_list)
+    bnSetPosition(rev_bnmal_list)
 }
 
 function stickToPicture(obj){
-    bnY = currentbnY()
-    obj.style.top = bnY
+    obj.style.top = currentbnY()
 }
 
 function Jesus(obj, number){
@@ -286,6 +293,17 @@ function createExtendedDOMProto(obj){
     let primer = Object.getPrototypeOf(obj)
 }
 
+function bnSetPosition(list){
+    for (let i = 1; i < list.length; i++) {
+        if (i%10 !=0){
+            list[i].style.top = `${list[i-1].getBoundingClientRect().y + 10}px`
+        } else {
+            list[i].style.top = currentbnY()
+            list[i].style.left = `${list[i-1].getBoundingClientRect().x + 20}px`
+        }
+    }
+}
+
 function defineTrajectory(obj, targetX, targetY){
     coor = obj.getBoundingClientRect()
     moveX = targetX - coor.x
@@ -293,17 +311,16 @@ function defineTrajectory(obj, targetX, targetY){
     return [moveX, moveY]
 }
 
-let bnfem_list=[]
-let bnmal_list=[]
-let bn_list = bnfem_list.concat(bnmal_list)
 
 /* ------ BACK ------ */
 
 /* ------ FRONT ------ */
 init_anime()
 
-window.addEventListener('resize', () => {
-    stickToPicture(bnfem); stickToPicture(bnmal);
-    bn_list.forEach(bn => stickToPicture(bn))
-})
+
+
+// window.addEventListener('resize', () => {
+//     stickToPicture(bnfem); stickToPicture(bnmal);
+//     bn_list.forEach(bn => stickToPicture(bn))
+// })
 
