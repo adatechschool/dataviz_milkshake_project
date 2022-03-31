@@ -53,8 +53,44 @@ body {
     }
   }
 
-  .fem, .mal {
+  /*.fem, .mal {
     opacity: 0;
     animation: rectFade 1s cubic-bezier(0.645, 
     0.045, 0.355, 1) forwards;
-    }
+    }*/
+
+  .test {position: absolute;
+    top: 68%;
+    left:60%;
+    width: 3.5%;   
+  }
+
+  .test2 {position: absolute;
+    top: 66%;
+    left:60%;
+    width: 3.5%;   
+  }
+
+  .test3 {position: absolute;
+    top: 64%;
+    left:60%;
+    width: 3.5%;   
+  }
+ 
+  .testhomme {position: absolute;
+    top: 68%;
+    left:76.5%;
+    width: 3.5%;   
+  }
+
+  .test2homme {position: absolute;
+    top: 66%;
+    left:76.5%;
+    width: 3.5%;   
+  }
+
+  .test3homme {position: absolute;
+    top: 64%;
+    left:76.5%;
+    width: 3.5%;   
+  }
