@@ -11,12 +11,11 @@ body {
 
 .bnsvg{
   position: absolute;
-  width: 5%;  
+  top: 98%;
+  width: 3.5%;  
 }
 .fem{
-  top: 100px;
-  left: 1154px;
-  perspective: 20px;
+  left: 60%;
 }
 
 .femTwo{
@@ -30,8 +29,7 @@ body {
   perspective: 20px;
 }
 .mal{
-  top: 100px;
-  left: 1462px;
+  left: 76.5%;
 }
 
 .btn-secondary{
