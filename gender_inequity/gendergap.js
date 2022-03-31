@@ -325,15 +325,15 @@ function defineTrajectory(obj, targetX, targetY){
 
 
 /* ------ BACK ------ */
-let objPays = Pays.promesse;
-let obPays = Pays.urlPays();
+/*let objPays = Pays.promesse;
+let obPays = Pays.urlPays();*/
 
-function linkFrontBack(){
+/*function linkFrontBack(){
    let j = await objPays.urlPays().promesse;
    let i = j.json(){
        console.log(j)
    }
-}
+}*/
 
 // countryObservation(j)
 
@@ -353,5 +353,4 @@ function getCountry(id) {
 }
 
 
-document.getElementById("test").setAttribute("style","opacity:0");
 
