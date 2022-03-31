@@ -13,9 +13,6 @@ function urlPays(){
     
     nowList.forEach(pays => pays.promesse = returnAPI(`https://stats.oecd.org/SDMX-JSON/data/DEC_I/${pays.id}.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions`))
     return(nowList)
-
-
-
 }
 
 function pays_Objet(){
@@ -298,6 +295,17 @@ let bnmal_list=[]
 let bn_list = bnfem_list.concat(bnmal_list)
 
 /* ------ BACK ------ */
+let objPays = Pays.promesse;
+// let obPays = Pays.urlPays();
+
+// function linkFrontBack(){
+//    let j = await objPays.urlPays().promesse;
+//    let i = j.json(){
+//        console.log(j)
+//    }
+// }
+
+// countryObservation(j)
 
 /* ------ FRONT ------ */
 init_anime()
