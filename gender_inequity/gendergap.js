@@ -307,3 +307,11 @@ window.addEventListener('resize', () => {
     bn_list.forEach(bn => stickToPicture(bn))
 })
 
+function getCountry(id) {
+    document.getElementById("textecountry").innerHTML =  `<h5>En ${id}, les femmes gagnent 11.82 de moins que les hommes</h5>`;
+    document.getElementById("flagcountry").src=`css/flags/${id}flag.svg`;
+}
+
+
+document.getElementById("test").setAttribute("style","opacity:0");
+

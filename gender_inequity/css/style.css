@@ -1,4 +1,3 @@
-
 body {
     background-color: #59C4BE;
     color:white;
@@ -7,18 +6,29 @@ body {
 
 }
 .flags {width:50px;}
+
 .blocvide {width:50px;}
+
 .bnsvg{
   position: absolute;
-  width: 3.5%;  
+  width: 5%;  
 }
-
 .fem{
   top: 100px;
   left: 1154px;
   perspective: 20px;
 }
 
+.femTwo{
+  top: 670px;
+  left: 1154px;
+  perspective: 20px;
+}
+.femThree{
+  top: 650px;
+  left: 1154px;
+  perspective: 20px;
+}
 .mal{
   top: 100px;
   left: 1462px;
@@ -51,7 +61,7 @@ body {
     width: 1%;
     }
     to {
-    width:3.5%;
+    width:5%;
     opacity: 1;
     }
   }
