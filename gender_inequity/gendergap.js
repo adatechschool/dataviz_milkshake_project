@@ -236,7 +236,6 @@ function countryYears(a){
 }
 
 
-
 function countries(b){
    let c = b.structure.dimensions.observation[0].values
    let list = []
@@ -254,6 +253,13 @@ const bnmalX = '76.5%'
 
 const bnfem = document.querySelector(".fem")
 const bnmal = document.querySelector(".mal")
+
+const bnXRelPadding = 0.05
+const coeff1_fem = 0.22
+const coeff_fem = [coeff1_fem, coeff1_fem + bnXRelPadding, coeff1_fem + 2*bnXRelPadding]
+const coeff1_mal = 0.58
+const coeff_mal = [coeff1_mal, coeff1_mal + bnXRelPadding, coeff1_mal + 2*bnXRelPadding]
+
 let bnfem_list
 let rev_bnfem_list
 let bnmal_list
@@ -264,6 +270,11 @@ function currentbnY(){
     return `${bgPic.y+0.72*bgPic.height}px`
 }
 
+function currentbnX(coeff){
+    bgPic = document.querySelector('#illustration_bg').getBoundingClientRect()
+    return `${bgPic.x+coeff*bgPic.width}px`
+}
+
 function init_anime(){
     bnfem.style.top = currentbnY()
     bnmal.style.top = currentbnY()
@@ -271,8 +282,8 @@ function init_anime(){
     bnmal_list=Jesus(bnmal,33)
     rev_bnfem_list=bnfem_list.slice().reverse()
     rev_bnmal_list=bnmal_list.slice().reverse()
-    bnSetPosition(rev_bnfem_list)
-    bnSetPosition(rev_bnmal_list)
+    bnSetPosition(bnfem_list, coeff_fem)
+    bnSetPosition(bnmal_list, coeff_mal)
 }
 
 function stickToPicture(obj){
@@ -293,16 +304,20 @@ function createExtendedDOMProto(obj){
     let primer = Object.getPrototypeOf(obj)
 }
 
-function bnSetPosition(list){
+function bnSetPosition(list, ref){
+    let j = 0
     for (let i = 1; i < list.length; i++) {
-        if (i%10 !=0){
-            list[i].style.top = `${list[i-1].getBoundingClientRect().y + 10}px`
-        } else {
+        if(i%11==0){
+            j++
             list[i].style.top = currentbnY()
-            list[i].style.left = `${list[i-1].getBoundingClientRect().x + 20}px`
+            list[i].style.left = currentbnX(ref[j])
+        }else{
+            list[i].style.top = `${list[i-1].getBoundingClientRect().y + 15}px`
+            list[i].style.left = currentbnX(ref[j])
         }
     }
 }
+
 
 function defineTrajectory(obj, targetX, targetY){
     coor = obj.getBoundingClientRect()
