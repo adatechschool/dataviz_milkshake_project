@@ -338,7 +338,7 @@ let obPays = Pays.urlPays();*/
 // countryObservation(j)
 
 /* ------ FRONT ------ */
-init_anime()
+/*init_anime()*/
 
 
 
@@ -350,7 +350,41 @@ init_anime()
 function getCountry(id) {
     document.getElementById("textecountry").innerHTML =  `<h5>En ${id}, les femmes gagnent 11.82 de moins que les hommes</h5>`;
     document.getElementById("flagcountry").src=`css/flags/${id}flag.svg`;
+    fetch(`https://stats.oecd.org/SDMX-JSON/data/DEC_I/${id}.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions`)
+.then( (data) => {
+if(data.ok){
+return data.json()
+} 
+})
+.then( gendergap => generateHtml(gendergap))
+.catch( error => console.error('Error:', error))
+
+const generateHtml = (data) => {
+    let annee2019 = data.dataSets[0].observations["0:14:0:0"];
+console.log(annee2019[0])
+document.getElementById("textecountry").innerHTML = `<h5>En ${id}, les femmes gagnent ${annee2019[0]} de moins que les hommes</h5>`
+}
+    $( ".test3" ).fadeOut();
+    $( ".test3" ).fadeIn();
+    setInterval(function() {
+        $( ".test3" ).fadeOut();
+        $( ".test3" ).fadeIn();
+        }, 2000);
 }
 
 
+
+/*for(b in bnfem_list) {
+    setInterval(function() {
+        b.fadeIn();
+        b.fadeOut();
+        }, 2000)
+}*/
+
+/*setInterval(function() {
+$( ".test" ).css( "opacity", "0" )
+}, 1000)
+setInterval(function() {
+$( ".test" ).css( "opacity", "1" )
+}, 2000)*/
 
