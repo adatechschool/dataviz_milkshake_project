@@ -7,25 +7,25 @@ async function returnAPI(url){
     return data
 }
 
-function urlPays(){
-    
-    let nowList = Pays.slice();
-    
-    nowList.forEach(pays => pays.promesse = returnAPI(`https://stats.oecd.org/SDMX-JSON/data/DEC_I/${pays.id}.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions`))
-    return(nowList)
+function urlPays(list){       
+    list.forEach(pays => pays.promesse = returnAPI(`https://stats.oecd.org/SDMX-JSON/data/DEC_I/${pays.id}.MEN+WOMEN+MW.GWG5/all?startTime=2005&endTime=2020&dimensionAtObservation=allDimensions`))
+    return list
 }
 
-function pays_Objet(){
-    const dList = urlPays()
+function fulfillPromises(list){
+    list.forEach(async pays => {
+        pays.data = await pays.promesse;
+    })
+    return list
+}
+
+function pays_Objet(list){
+    const dList = list
     let fObjet = {}
     dList.forEach(element => {
         fObjet[element.id] = element
     });
     return fObjet    
-}
-
-function paysRealisePromesse(pays){
-    pays_Objet.pays.data = await pays_Objet.pays.promesse
 }
 
 function translate(number){
@@ -35,10 +35,9 @@ function translate(number){
 }
 
 function lastObservation(pays){
-    const l = countryObservation(paysRealisePromesse(pays))
+    const l = countryObservation(pays.data)
     return translate(l[l.length - 1])
 }
- 
 
 
 const Pays = [
@@ -339,7 +338,9 @@ function defineTrajectory(obj, targetX, targetY){
 
 
 // /* ------ BACK ------ */
-let objPays = pays_Objet()
+const listPaysURL = urlPays(Pays)
+const fulfilledList =  fulfillPromises(listPaysURL)
+const objPays = pays_Objet(fulfilledList)
 
 // countryObservation(j)
 
@@ -354,6 +355,6 @@ init_anime()
 // })
 
 function getCountry(id) {
-    document.getElementById("tetxtecounstry").innerHTML = `<h5>${objPays.id.name} : le salaire médian des femmes est inférieur de ${lastObservation(id)}% par rapport à celui des hommes  </h5>`;
+    document.getElementById("tetxtecounstry").innerHTML = `<h5>${objPays[id].name} : le salaire médian des femmes est inférieur de ${lastObservation(objPays[id])}% par rapport à celui des hommes  </h5>`;
     document.getElementById("flagcountry").src=`css/flags/${id}flag.svg`;
 }
