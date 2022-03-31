@@ -24,6 +24,20 @@ function pays_Objet(){
     return fObjet    
 }
 
+function paysRealisePromesse(pays){
+    pays_Objet.pays.data = await pays_Objet.pays.promesse
+}
+
+function translate(number){
+    let n = number.toFixed(1)
+    t = n.toString()
+    return t.replace('.', ',')
+}
+
+function lastObservation(pays){
+    const l = countryObservation(paysRealisePromesse(pays))
+    return translate(l[l.length - 1])
+}
  
 
 
@@ -324,16 +338,8 @@ function defineTrajectory(obj, targetX, targetY){
 }
 
 
-/* ------ BACK ------ */
-/*let objPays = Pays.promesse;
-let obPays = Pays.urlPays();*/
-
-/*function linkFrontBack(){
-   let j = await objPays.urlPays().promesse;
-   let i = j.json(){
-       console.log(j)
-   }
-}*/
+// /* ------ BACK ------ */
+let objPays = pays_Objet()
 
 // countryObservation(j)
 
@@ -348,9 +354,6 @@ init_anime()
 // })
 
 function getCountry(id) {
-    document.getElementById("textecountry").innerHTML =  `<h5>En ${id}, les femmes gagnent 11.82 de moins que les hommes</h5>`;
+    document.getElementById("tetxtecounstry").innerHTML = `<h5>${objPays.id.name} : le salaire médian des femmes est inférieur de ${lastObservation(id)}% par rapport à celui des hommes  </h5>`;
     document.getElementById("flagcountry").src=`css/flags/${id}flag.svg`;
 }
-
-
-
